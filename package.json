@@ -1,16 +1,19 @@
 {
   "name": "github.io",
-  "homepage": "https://noelbird.github.io",
+  "homepage": "https://noelbird.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "gh-pages": "^3.1.0",
+    "promise.prototype.finally": "^3.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -37,7 +40,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "core-decorators": "^0.20.0",
     "customize-cra": "^1.0.0",
+    "mobx": "^5.15.6",
+    "mobx-react": "^6.3.0",
     "react-app-rewired": "^2.1.6"
   }
 }

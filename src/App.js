@@ -1,23 +1,45 @@
 import React from 'react';
+import useStores from "./components/useStores";
+import {
+  Button,
+  Container,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles } from '@material-ui/core/styles';
 
-class Test extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      val:""
-    }
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-    this.onChangeHandler = this.onChangeHandler.bind(this)
-  }
-
-  onChangeHandler = (e) => {
-    this.setState({val: e.target.value})
-  }
-  render(){
+function Test(props){
+    const {testStore} = useStores()
+    const classes = useStyles();
     return(
-      <div>
-        <input type="text" value={this.state.value} onChange={this.onChangeHandler} /><br />
-        {this.state.val}
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Space
+            </Typography>
+            <Button color="inherit">Login</Button>
+          </Toolbar>
+        </AppBar>
+        <Container>
         <br />
         <br />
         <h3>오늘 한 일</h3>
@@ -37,9 +59,10 @@ class Test extends React.Component{
           <li>noelbird.kr은 noelbird.github.io에 연결하기</li>
           <li>글 쓰기 페이지, 글 보기 페이지(CRUD)</li>
         </ul>
+        </Container>
+        
       </div>
     )
-  }
 }
 
 function App() {
