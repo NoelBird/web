@@ -8,15 +8,17 @@ import { configure } from "mobx";
 import { Provider } from "mobx-react";
 
 // stores
-import testStore from "./stores/testStore";
+import testStore from "stores/testStore";
+import postStore from "stores/postStore";
 
-import App from './App';
-import "./index.css";
+import App from 'App';
+import "index.css";
 
 import * as serviceWorker from './serviceWorker';
 
 const stores = {
   testStore,
+  postStore,
 }
 
 // FOR easier debugging
